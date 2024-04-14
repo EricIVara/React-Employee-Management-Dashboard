@@ -1,7 +1,5 @@
 import logo from './logo.svg';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css';
-// TODO: import components here 
 
 function App() {
   return (
@@ -9,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Hello professor Miguel Kanto, I look forward in learning this awesome framework
+          Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
           className="App-link"
@@ -17,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learning React
+          Learn React
         </a>
       </header>
     </div>
