@@ -1,0 +1,77 @@
+/* EmployeeForm.css */
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Custom Variables */
+:root {
+  --dark-blue: #1687a7;
+  --light-blue: #e3f6f5;
+  --blue: #104655;
+  --white: #f6f6f6; /* Changed to a softer white for better contrast */
+}
+
+/* Full viewport container to center form */
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--white); /* Soft background color */
+}
+
+/* Form Container */
+.EmployeeForm {
+  font-family: "Arial", sans-serif; /* A more common font for consistent display */
+  background-color: var(--light-blue);
+  padding: 40px;
+  border-radius: 8px; /* Softened the corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; /* Max width for form container */
+}
+
+/* Style for input fields */
+.EmployeeForm input[type="text"],
+.EmployeeForm input[type="email"],
+.EmployeeForm input[type="password"] {
+  font-size: 16px;
+  padding: 15px;
+  border: 2px solid var(--dark-blue); /* Solid border for better visibility */
+  margin-bottom: 20px; /* Increased margin for better spacing */
+  width: calc(100% - 30px); /* Adjust width based on padding */
+  border-radius: 4px; /* Consistent with button styling */
+}
+
+/* Focused input styling */
+.EmployeeForm input[type="text"]:focus,
+.EmployeeForm input[type="email"]:focus,
+.EmployeeForm input[type="password"]:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 2px var(--blue); /* Add a shadow for a focus effect */
+}
+
+/* Style for the submit button */
+.EmployeeForm button[type="submit"] {
+  width: calc(100% - 30px); /* Full width, accounting for padding */
+  padding: 15px;
+  border-radius: 4px;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  font-size: 18px;
+  font-weight: bold; /* Make text bold */
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+/* Hover and focus styles for button */
+.EmployeeForm button[type="submit"]:hover,
+.EmployeeForm button[type="submit"]:focus {
+  background-color: var(--blue);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lift effect */
+}
