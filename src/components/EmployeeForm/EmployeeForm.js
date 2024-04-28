@@ -5,7 +5,7 @@ function EmployeeForm({ setValue, handleSubmit }) {
     <form onSubmit={handleSubmit} className="form-wrapper">
       <h3>Employee Form</h3>
       <input
-        name="text"
+        name="name"
         type="text"
         placeholder="name"
         onChange={(e) => setValue(e.target.value)}

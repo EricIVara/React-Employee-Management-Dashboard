@@ -3,14 +3,8 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  // use state function
-  const [value, setValue] = useState({
-    name: "",
-    email: "",
-    jobTitle: "",
-  });
+  const [value, setValue] = useState({});
 
-  // handle submit function
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("App ", value);

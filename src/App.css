@@ -1,38 +1,55 @@
 .App {
   text-align: center;
+  font-family: "Arial", sans-serif; /* Choose a font similar to the one in the picture */
+  padding: 50px; /* Add some padding around the application */
+  background-image: url("../public/assets/360_F_357762401_Q6IYG6rSR6yoy2mnBsOF3ZtuYVzBNARe.jpg"); /* Add this line, replace with the path to your image */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  min-height: 100vh; /* Make sure it covers the full screen height */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+form.form-wrapper {
+  background-color: #fff; /* White background for the form */
+  padding: 20px;
+  margin: auto; /* Center the form in the page */
+  width: 50%; /* Adjust width as necessary */
+  border: 1px solid #ccc; /* A light border as seen in the image */
+  border-radius: 5px; /* Slight rounding of corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* A subtle shadow for some depth */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+form.form-wrapper h3 {
+  color: #333; /* Dark grey text for contrast */
+  margin-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+form.form-wrapper input {
+  width: calc(100% - 20px); /* Full width inputs, accounting for padding */
+  margin-bottom: 10px; /* Add space between inputs */
+  padding: 10px; /* Padding inside inputs */
+  border: 1px solid #ccc; /* A light border for the inputs */
+  border-radius: 3px; /* Slightly rounded corners for the inputs */
+}
+
+form.form-wrapper button {
+  background-color: #007bff; /* Bootstrap primary blue */
   color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Hover effect for the button */
+form.form-wrapper button:hover {
+  background-color: #0056b3; /* A slightly darker blue on hover */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Ensuring that the form doesn't get too wide on large screens */
+@media (min-width: 768px) {
+  form.form-wrapper {
+    width: 400px; /* Fixed width on larger screens */
   }
 }
