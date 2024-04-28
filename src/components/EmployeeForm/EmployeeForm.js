@@ -1,45 +1,26 @@
-import React, { useState } from "react";
 import "./EmployeeForm.css";
 
-function EmployeeForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    jobTitle: "",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form data Submitted:", formData);
-  };
-
+function EmployeeForm({ setValue, handleSubmit }) {
   return (
     <form onSubmit={handleSubmit} className="form-wrapper">
+      <h3>Employee Form</h3>
       <input
+        name="text"
         type="text"
-        name="name"
-        value={formData.name}
-        onChange={handleChange}
+        placeholder="name"
+        onChange={(e) => setValue(e.target.value)}
       />
       <input
-        type="email"
         name="email"
-        value={formData.email}
-        onChange={handleChange}
+        type="email"
+        placeholder="email"
+        onChange={(e) => setValue(e.target.value)}
       />
       <input
-        type="text"
         name="jobTitle"
-        value={formData.jobTitle}
-        onChange={handleChange}
+        type="text"
+        placeholder="jobTitle"
+        onChange={(e) => setValue(e.target.value)}
       />
       <button type="submit">Submit</button>
     </form>
