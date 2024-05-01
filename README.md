@@ -1,4 +1,4 @@
-![Project-sample](public\assets\image.png)
+<img src="public\assets\image.png">
 
 # Getting Started with Create React App
 
