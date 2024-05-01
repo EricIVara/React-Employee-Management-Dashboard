@@ -1,0 +1,23 @@
+/* Add this to your CSS file */
+.card-output {
+  font-family: "Arial", sans-serif;
+  color: #333;
+  background-color: #fff; /* White background for cards */
+  border: 1px solid #ccc; /* Slightly darker border for definition */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 16px; /* Comfortable padding inside the cards */
+  margin: 16px auto; /* Margin at the top and bottom, auto on the sides for center alignment */
+  display: block; /* Ensures that div behaves as a block-level element */
+  width: 80%; /* This percentage width will make it responsive to screen size, adjust as necessary */
+  max-width: 600px; /* Maximum width to ensure readability on larger screens */
+  text-align: center; /* Center the text within each card */
+  border-radius: 10px; /* Rounded corners for a softer look */
+  box-sizing: border-box; /* Makes sure padding doesn't affect the overall width */
+}
+
+/* Container for the cards, if necessary for further alignment */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This centers the cards horizontally on the page */
+}

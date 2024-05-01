@@ -1,29 +1,48 @@
+import { useState } from "react";
 import "./EmployeeForm.css";
 
-function EmployeeForm({ setValue, handleSubmit }) {
+function EmployeeForm({ addName, clearNames }) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [jobTitle, setJobTitle] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addName({ name, email, jobTitle });
+    setName("");
+    setEmail("");
+    setJobTitle("");
+  };
+
   return (
-    <form onSubmit={handleSubmit} className="form-wrapper">
-      <h3>Employee Form</h3>
-      <input
-        name="name"
-        type="text"
-        placeholder="name"
-        onChange={(e) => setValue(e.target.value)}
-      />
-      <input
-        name="email"
-        type="email"
-        placeholder="email"
-        onChange={(e) => setValue(e.target.value)}
-      />
-      <input
-        name="jobTitle"
-        type="text"
-        placeholder="jobTitle"
-        onChange={(e) => setValue(e.target.value)}
-      />
-      <button type="submit">Submit</button>
-    </form>
+    <div>
+      <h1>Welcome</h1>
+      <form onSubmit={handleSubmit} className="form-wrapper">
+        <h3>Employee Form</h3>
+        <input
+          type="text"
+          placeholder="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          type="email"
+          placeholder="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="jobTitle"
+          value={jobTitle}
+          onChange={(e) => setJobTitle(e.target.value)}
+        />
+        <button type="submit">Submit</button>
+        <button type="button" onClick={clearNames}>
+          Clear All Employees
+        </button>
+      </form>
+    </div>
   );
 }
 
