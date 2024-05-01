@@ -2,7 +2,7 @@
   text-align: center;
   font-family: "Arial", sans-serif; /* Choose a font similar to the one in the picture */
   padding: 50px; /* Add some padding around the application */
-  background-image: url("../public/assets/360_F_357762401_Q6IYG6rSR6yoy2mnBsOF3ZtuYVzBNARe.jpg"); /* Add this line, replace with the path to your image */
+  background-image: url("../public/assets/background.jpg"); /* Add this line, replace with the path to your image */
   background-size: cover; /* Cover the entire area */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Do not repeat the image */
