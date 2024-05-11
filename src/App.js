@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import EmployeeForm from "./components/EmployeeForm/EmployeeForm";
 import CardsList from "./components/Cards/Cards";
 import { useState, useEffect } from "react";
@@ -7,26 +8,41 @@ function App() {
   const [names, setNames] = useState([]);
 
   useEffect(() => {
-    const saveNames = JSON.parse(localStorage.getItem("name")) || [];
-    setNames(saveNames);
+    const savedNames = JSON.parse(localStorage.getItem("employees")) || [];
+    setNames(savedNames);
   }, []);
 
   const addName = (newEmployee) => {
     const newNames = [...names, newEmployee];
     setNames(newNames);
-    localStorage.setItem("name", JSON.stringify(newNames));
+    localStorage.setItem("employees", JSON.stringify(newNames));
   };
 
   const clearNames = () => {
     setNames([]);
-    localStorage.setItem("name", JSON.stringify([]));
+    localStorage.setItem("employees", JSON.stringify([]));
   };
 
   return (
-    <div className="App">
-      <EmployeeForm addName={addName} clearNames={clearNames} />
-      <CardsList cardData={names} />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route
+            path="/"
+            element={<h1>Welcome to the Employee Management App</h1>}
+          />
+          <Route
+            path="/manage-employees"
+            element={
+              <>
+                <EmployeeForm addName={addName} clearNames={clearNames} />
+                <CardsList cardData={names} />
+              </>
+            }
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
