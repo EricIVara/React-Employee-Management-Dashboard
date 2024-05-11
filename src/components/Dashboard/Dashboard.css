@@ -1,0 +1,22 @@
+/* src/components/Dashboard/Dashboard.css */
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
+}
+
+.dashboard-tile {
+  flex: 1 1 200px; /* Flex basis of 200px, grows and shrinks */
+  background-color: #3498db;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.main-content {
+  flex-grow: 1; /* Takes remaining space */
+  overflow-y: auto; /* Allows scrolling */
+  background-color: #f8f9fa; /* Light background for the content area */
+  padding: 20px; /* Padding around the content */
+}

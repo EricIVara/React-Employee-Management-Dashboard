@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React, { Suspense, lazy } from "react";
-import Navbar from "./components/Navbar/Navbar"; // Import the Navbar component
-import CardsList from "./components/Cards/Cards";
+import Navbar from "./components/Navbar/Navbar"; // Navigation bar at the top
+import Sidebar from "./components/Sidebar/Sidebar"; // Sidebar component for navigation
+import Dashboard from "./components/Dashboard/Dashboard"; // Main Dashboard component
+import CardsList from "./components/Cards/Cards"; // For displaying lists of cards
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { initializeEmployees } from "./store/employeeSlice";
@@ -23,22 +25,24 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar /> {/* Navbar component added for consistent navigation */}
-        <Routes>
-          <Route
-            path="/"
-            element={<h1>Welcome to the Employee Management App</h1>}
-          />
-          <Route
-            path="/manage-employees"
-            element={
-              <Suspense fallback={<div>Loading...</div>}>
-                <EmployeeForm />
-                <CardsList cardData={names} />
-              </Suspense>
-            }
-          />
-        </Routes>
+        <Navbar /> {/* Consistent top navigation */}
+        <div className="app-body">
+          <Sidebar /> {/* Sidebar for additional navigation */}
+          <div className="main-content">
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route
+                path="/manage-employees"
+                element={
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <EmployeeForm />
+                    <CardsList cardData={names} />
+                  </Suspense>
+                }
+              />
+            </Routes>
+          </div>
+        </div>
       </div>
     </Router>
   );

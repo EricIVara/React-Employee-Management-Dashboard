@@ -1,16 +1,86 @@
+/* App.css */
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Ensures children (like sidebar) fill the height */
+  text-align: left; /* Adjust text alignment for sidebar and dashboard */
   font-family: "Arial", sans-serif;
-  padding: 50px;
   background-image: url("../public/assets/background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 100vh;
+  min-height: 100vh; /* Ensures minimum height covers the full viewport */
+  padding: 0; /* Removes padding to allow full use of space for sidebar and dashboard */
+  margin: 0; /* Ensures no default margin */
+}
+
+.app-body {
+  display: flex;
+  flex: 1; /* Allows this div to take up the remaining space */
+  overflow: hidden; /* Prevents any overflow from sidebar or dashboard */
+}
+
+.navbar {
+  width: 100%; /* Full width to align with the sidebar */
+  background-color: #333; /* Navbar background color */
+  padding: 10px 20px; /* Padding for navbar items */
+  color: white;
+  display: flex;
+  justify-content: space-between; /* Space out nav items */
+  box-sizing: border-box; /* Includes padding in width calculation */
+  align-items: center;
+}
+
+.navbar-section {
+  display: flex;
+  align-items: center;
+}
+
+.admin-title {
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.user-info {
+  cursor: pointer;
+  position: relative;
+}
+
+.dropdown-arrow {
+  margin-left: 5px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  background-color: #555;
+  padding: 5px 10px;
+  border-radius: 5px;
+  top: 25px;
+}
+
+.dropdown-menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  text-decoration: underline;
+}
+
+.nav-link {
+  color: white; /* Ensures nav links are visible against dark background */
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px; /* Rounded corners for aesthetic appeal */
+}
+
+.nav-link:hover {
+  background-color: #555; /* Darker background on hover for better interaction feedback */
 }
 
 .link-button {
-  background-color: #007bff;
+  background-color: #007bff; /* Primary button color */
   border: none;
   color: white;
   padding: 10px 20px;
@@ -24,5 +94,5 @@
 }
 
 .link-button:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Darker blue on hover */
 }
