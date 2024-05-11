@@ -1,47 +1,53 @@
-form.form-wrapper {
-  background-color: #fff;
-  padding: 20px;
-  margin: auto;
-  width: 50%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+.employee-form-container {
+  background-color: #ffffff; /* Clear white background */
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: fit-content; /* Adjust width to fit content */
+  margin: 2rem auto; /* Centering the form */
 }
 
-form.form-wrapper h3 {
-  color: #333;
-  margin-bottom: 20px;
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
-form.form-wrapper input {
-  width: calc(100% - 20px);
-  margin-bottom: 10px;
+.form-wrapper label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #2c3e50; /* Dark grey for text */
+}
+
+.form-wrapper input {
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  margin-bottom: 15px; /* More space between fields */
+  border: 1px solid #bdc3c7; /* Subtle border */
+  border-radius: 4px;
 }
 
-form.form-wrapper button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 15px;
+.form-buttons button {
+  padding: 10px 20px;
+  margin-top: 10px; /* Space above the button */
   border: none;
-  border-radius: 3px;
+  border-radius: 4px;
   cursor: pointer;
-  margin-top: 10px;
-  margin-right: 10px;
+  font-size: 16px; /* Larger font size */
 }
 
-form.form-wrapper button:last-child {
-  margin-right: 0;
+.form-buttons button[type="submit"] {
+  background-color: #27ae60; /* Green for submit */
+  color: white;
 }
 
-form.form-wrapper button:hover {
-  background-color: #0056b3;
+.form-buttons button[type="submit"]:hover {
+  background-color: #2ecc71; /* Lighter green on hover */
 }
 
-@media (min-width: 768px) {
-  form.form-wrapper {
-    width: 400px;
-  }
+.form-buttons button[type="button"] {
+  background-color: #c0392b; /* Red for clear */
+  color: white;
+}
+
+.form-buttons button[type="button"]:hover {
+  background-color: #e74c3c; /* Lighter red on hover */
 }

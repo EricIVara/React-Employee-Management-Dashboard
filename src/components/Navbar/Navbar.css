@@ -1,0 +1,19 @@
+.navbar {
+  background-color: #2c3e50; /* Darker shade for better contrast */
+  padding: 20px 30px; /* More padding for better touch targets */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-link {
+  color: #ecf0f1; /* Light text for contrast */
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 18px; /* Larger font for readability */
+  border-radius: 5px; /* Rounded corners for a modern look */
+}
+
+.nav-link:hover {
+  background-color: #34495e; /* Slightly lighter background on hover */
+}

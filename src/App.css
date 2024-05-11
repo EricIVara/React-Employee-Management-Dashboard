@@ -1,10 +1,28 @@
 .App {
   text-align: center;
-  font-family: "Arial", sans-serif; /* Choose a font similar to the one in the picture */
-  padding: 50px; /* Add some padding around the application */
-  background-image: url("../public/assets/background.jpg"); /* Add this line, replace with the path to your image */
-  background-size: cover; /* Cover the entire area */
-  background-position: center; /* Center the background image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  min-height: 100vh; /* Make sure it covers the full screen height */
+  font-family: "Arial", sans-serif;
+  padding: 50px;
+  background-image: url("../public/assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.link-button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.link-button:hover {
+  background-color: #0056b3;
 }

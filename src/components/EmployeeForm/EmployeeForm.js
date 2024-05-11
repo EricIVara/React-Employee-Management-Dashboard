@@ -1,46 +1,56 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addEmployee, clearEmployees } from "../../store/employeeSlice";
 import "./EmployeeForm.css";
 
-function EmployeeForm({ addName, clearNames }) {
+function EmployeeForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [jobTitle, setJobTitle] = useState("");
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addName({ name, email, jobTitle });
+    dispatch(addEmployee({ name, email, jobTitle }));
     setName("");
     setEmail("");
     setJobTitle("");
   };
 
   return (
-    <div>
-      <h1>Welcome</h1>
+    <div className="employee-form-container">
+      <h2>Add New Employee</h2>
       <form onSubmit={handleSubmit} className="form-wrapper">
-        <h3>Employee Form</h3>
+        <label htmlFor="name">Name:</label>
         <input
+          id="name"
           type="text"
-          placeholder="name"
+          placeholder="Enter employee's name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
+        <label htmlFor="email">Email:</label>
         <input
+          id="email"
           type="email"
-          placeholder="email"
+          placeholder="Enter employee's email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
+        <label htmlFor="jobTitle">Job Title:</label>
         <input
+          id="jobTitle"
           type="text"
-          placeholder="jobTitle"
+          placeholder="Enter employee's job title"
           value={jobTitle}
           onChange={(e) => setJobTitle(e.target.value)}
         />
-        <button type="submit">Submit</button>
-        <button type="button" onClick={clearNames}>
-          Clear All Employees
-        </button>
+        <div className="form-buttons">
+          <button type="submit">Add Employee</button>
+          <button type="button" onClick={() => dispatch(clearEmployees())}>
+            Clear All Employees
+          </button>
+        </div>
       </form>
     </div>
   );
